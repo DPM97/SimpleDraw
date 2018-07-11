@@ -1,3 +1,4 @@
+// This program utilizes inheritence and arrays to create different pens and buttons. After said pen is chosen by clicking on on of the buttons given, the user can draw using their mouse pointer utilizing the drawSegment functions in each pen class.
 basicPen bPen = new basicPen();
 Pen2 penTwo = new Pen2();
 Pen3 penThree = new Pen3();
@@ -5,7 +6,7 @@ Pen4 penFour = new Pen4();
 Eraser eraser = new Eraser();
 
 basicPen [] penChoices = new basicPen[5];
-float _barWidth=300.0;    //slider-bar width;
+float _barWidth=500.0;    //slider-bar width;
 float _sliderPos=0.0;  //initial slider position
 float _hueVal=map(_sliderPos, 0.0, _barWidth, 0.0, 255.0); //the hue value that is going to be used when filling
 float colorLine;
@@ -27,7 +28,7 @@ void setup() {
   button2 = new Buttons(200, 520, 200, 80, "SPIKES");
   button3 = new Buttons(400, 520, 200, 80, "ELLIPSE");
   button4 = new Buttons(600, 520, 199, 80, "RECTANGULAR PEN");
-  button5 = new Buttons(600, 0, 199, 80, "ERASER");
+  button5 = new Buttons(600, 0, 199, 80, "ERASER - Click 'space' to save");
 
   button = new Buttons[5];
   button[0] = button1;
@@ -59,6 +60,19 @@ void mouseReleased() {
   }
 }
 
+void keyPressed() {
+  saveDrawing();
+}
+
+void saveDrawing() {
+  float randomName;
+  randomName = random(0,100000);
+  if (keyPressed && key == ' ') {
+    PImage partialSave = get(0, 88, 800, 430);
+    partialSave.save("saves/" + "Drawing" + randomName + ".png");
+  }
+}
+
 // calls the drawdot function if mouse is clicked
 void mouseClicked() {
   bPen.drawDot(mouseX, mouseY, 5);
@@ -83,9 +97,9 @@ void drawSlider() {
 }
 
 float drawSlider(float xPos, float yPos, float sWidth, float sHeight, float hueVal) {
-  fill(255);
-  noStroke();
-  rect(0, 0, 375, 58);  //draw white background behind slider
+  fill(0x000000);
+  stroke(#42f4f1);
+  rect(0, 0, 600, 80);  //draw white background behind slider
 
   float sliderPos=map(hueVal, 0.0, 255.0, 0.0, sWidth); //find the current sliderPosition from hueVal
 
