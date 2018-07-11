@@ -1,11 +1,9 @@
 class Pen2 extends basicPen{
-  int inkColor;
   float thickness;
   float x1, y1, x2, y2; // pass in mouseX, mouseY, pmouseX, pmouseY
 
   Pen2() { // constructor
-    thickness = 5;
-    inkColor = 0x000000;
+    thickness = 1;
   }
 
 // draws star -- took from https://processing.org/examples/star.html
@@ -29,7 +27,7 @@ void star(float x, float y, float radius1, float radius2, int npoints) {
   //  draws the star at mouseX, mouseY with current selected color
   void drawSegment(float x1, float y1, float x2, float y2) {
     stroke(_hueVal, 255, 255);
-    strokeWeight(1);
+    strokeWeight(thickness);
     fill(_hueVal, 255, 255);
     star(mouseX, mouseY, 20, 10, 20); 
 

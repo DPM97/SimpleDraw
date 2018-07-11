@@ -1,11 +1,7 @@
 class Eraser extends basicPen {
-  int inkColor;
-  float thickness;
   float x1, y1, x2, y2; // pass in mouseX, mouseY, pmouseX, pmouseY
 
   Eraser() { // constructor
-    thickness = 30;
-    inkColor = 0x000000;
   }
 
 
