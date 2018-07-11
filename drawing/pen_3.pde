@@ -9,7 +9,7 @@ class Pen3 extends basicPen{ // splatter type pen
   }
 
 
-  //  draws line segments between memory saved mousex and mousey, and current mousex and mousey
+  //  draws random ellipses at mousex and mousey with the current selected color
   void drawSegment(float x1, float y1, float x2, float y2) {
      stroke(_hueVal, 255, 255);
      strokeWeight(5);

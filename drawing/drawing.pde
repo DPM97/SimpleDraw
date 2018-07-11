@@ -7,11 +7,10 @@ Eraser eraser = new Eraser();
 basicPen [] penChoices = new basicPen[5];
 float _barWidth=300.0;    //slider-bar width;
 float _sliderPos=0.0;  //initial slider position
-float _hueVal=map(_sliderPos, 0.0, _barWidth, 0.0, 255.0);
+float _hueVal=map(_sliderPos, 0.0, _barWidth, 0.0, 255.0); //the hue value that is going to be used when filling
 float colorLine;
 int chosen;
 basicPen pen;
-;  //initial hueValue
 Buttons button1; // regular pen button
 Buttons button2; // pen 2 button
 Buttons button3; // pen 3 button
@@ -42,10 +41,6 @@ void setup() {
   penChoices[3] = penFour;
   penChoices[4] = eraser;
   pen = penChoices[0];
-
-
-
-  // pen.drawDot();
 }
 
 void draw() {
@@ -53,6 +48,7 @@ void draw() {
   drawSlider();
 }
 
+// when mouse is released over a button it chooses the correct pen for said button
 void mouseReleased() {
   noStroke();
   for (int i=0; i<5; i++) {
@@ -63,15 +59,17 @@ void mouseReleased() {
   }
 }
 
+// calls the drawdot function if mouse is clicked
 void mouseClicked() {
   bPen.drawDot(mouseX, mouseY, 5);
 }
 
+// draws the chosen pen at (pmouseX, pmouseY, mouseX, mouseY)
 void mouseDragged() {
   pen.drawSegment(pmouseX, pmouseY, mouseX, mouseY);
 }
 
-
+// draws the buttons in a for loop
 void drawButtons() {
   for (int i=0; i<5; i++) {
     button[i].drawMe();

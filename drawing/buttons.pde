@@ -7,7 +7,7 @@ class Buttons {
   int fillColor;
   String text;
 
-  //constructor
+  // constructor
   Buttons (float _x, float _y, float _btnW, float _btnH, String _text) {
     x = _x;
     y = _y;

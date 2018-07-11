@@ -9,7 +9,7 @@ class Eraser extends basicPen {
   }
 
 
-  //  draws line segments between memory saved mousex and mousey, and current mousex and mousey
+  //  draws the ellipse's at mouseX, mouseY
   void drawSegment(float x1, float y1, float x2, float y2) {
     noStroke();
     fill(0, 0, 255);

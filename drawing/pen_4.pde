@@ -9,7 +9,7 @@ class Pen4 extends basicPen{
   }
 
 
-  //  draws line segments between memory saved mousex and mousey, and current mousex and mousey
+  //  draws random rect's at mousex and mousey with current selected color
   void drawSegment(float x1, float y1, float x2, float y2) {
     stroke(0x000000);
     rect(x1, y1, random(30,50), random(30,50));

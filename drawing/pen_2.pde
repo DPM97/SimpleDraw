@@ -26,7 +26,7 @@ void star(float x, float y, float radius1, float radius2, int npoints) {
 
 
 
-  //  draws the object at mouseX, mouseY
+  //  draws the star at mouseX, mouseY with current selected color
   void drawSegment(float x1, float y1, float x2, float y2) {
     stroke(_hueVal, 255, 255);
     strokeWeight(1);
