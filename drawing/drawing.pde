@@ -91,7 +91,7 @@ void drawButtons() {
 }
 
 
-// draws slider - taken from http://cs1335-documentation.readthedocs.io/en/latest/hsbSlider.html
+// draws slider 
 void drawSlider() {
   _hueVal= drawSlider(20.0, 20.0, _barWidth, 30.0, _hueVal);
 }
