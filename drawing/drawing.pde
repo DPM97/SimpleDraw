@@ -44,6 +44,7 @@ void setup() {
   pen = penChoices[0];
 }
 
+// just draws buttons and slider
 void draw() {
   drawButtons();
   drawSlider();
@@ -60,10 +61,12 @@ void mouseReleased() {
   }
 }
 
+// if key is pressed and it is ' ' then it will save the drawing into the folder /saves
 void keyPressed() {
   saveDrawing();
 }
 
+// saves the part of the screen specified under the /saves folder
 void saveDrawing() {
   float randomName;
   randomName = random(0,100000);
@@ -91,7 +94,7 @@ void drawButtons() {
 }
 
 
-// draws slider 
+// draws slider - taken from http://cs1335-documentation.readthedocs.io/en/latest/hsbSlider.html
 void drawSlider() {
   _hueVal= drawSlider(20.0, 20.0, _barWidth, 30.0, _hueVal);
 }
