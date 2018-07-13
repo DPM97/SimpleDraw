@@ -21,12 +21,13 @@ class Buttons {
 
   // draw buttons
   void drawMe() {
-    stroke(#42f4f1);
+    stroke(_hueVal, 255, 255);
     fill(fillColor);
     rect(x, y, w, h);
     fill(#ffffff);
     textAlign(CENTER);
     textSize(12);
+    fill(_hueVal, 255, 255);
     text(text, x + (w/2), y + (h/2));
   }
 
